@@ -77,5 +77,10 @@
         public void Beschleunigen(int Hallo, double abc) { }
 
         public void Bremsen(int dV) => Geschwindigkeit -= dV;
+
+        ~Fahrzeug()
+        {
+
+        }
     }
 }
