@@ -11,6 +11,9 @@ namespace Interfaces
         private bool isDisposed = false;
         public void Dispose()
         {
+            if (isDisposed)
+                return;
+
             Console.WriteLine("Bauteil wurde zerstört.");
             isDisposed = true;
         }

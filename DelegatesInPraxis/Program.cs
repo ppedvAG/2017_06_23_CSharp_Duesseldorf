@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -38,7 +39,8 @@ namespace DelegatesInPraxis
             //    return e.Experience > 5;
             //});
 
-            var query = Abfrage(employees, e => e.Experience > 5);
+            //var query = MyExtentions.Abfrage(employees, e => e.Experience > 5);
+            var query = employees.Abfrage(e => e.Name.Contains("m"));
             var linqQuery = employees
                 .Where(e => e.Experience > 5)
                 .OrderBy(e => e.Name);
@@ -49,10 +51,19 @@ namespace DelegatesInPraxis
                     select e;
 
             var namen = new[] { "Sepp", "Lukas", "Klaus" };
-            var x = Abfrage(namen, n => n.StartsWith("L"));
+            var x = MyExtentions.Abfrage(namen, n => n.StartsWith("L"));
 
-            foreach (var e in linqQuery)
+            foreach (var e in query)
                 Console.WriteLine($"Id: {e.Id} - {e.Name,10} - {e.Experience,2}");
+
+            var i = 4;
+            i.Dump();
+            "Hy".Dump();
+            8.Dump();
+            true.Dump();
+            false.Dump();
+            employees.Dump();
+            namen.Dump();
 
             Console.ReadKey();
         }
@@ -61,16 +72,6 @@ namespace DelegatesInPraxis
         {
             return employee.Name.Length > 4;
         }
-
-        private static IEnumerable<T> Abfrage<T>(
-            IEnumerable<T> source,
-            Func<T, bool> predicate)
-        {
-            foreach (var e in source)
-                if (predicate(e))
-                    yield return e;
-        }
-
         private static IEnumerable<Employee> GetData()
         {
             return new List<Employee>
@@ -85,6 +86,27 @@ namespace DelegatesInPraxis
                 new Employee { Id = 8, Name = "Isa", Experience = 8 },
                 new Employee { Id = 9, Name = "Hans", Experience = 1 },
             };
+        }
+    }
+
+    public static class MyExtentions
+    {
+        public static IEnumerable<T> Abfrage<T>(
+            this IEnumerable<T> source,
+            Func<T, bool> predicate)
+        {
+            foreach (var e in source)
+                if (predicate(e))
+                    yield return e;
+        }
+
+        public static void Dump(this object obj)
+        {
+            if (obj is IEnumerable objects && !(obj is string))
+                foreach (var o in objects)
+                    Dump(o);
+            else
+                Console.WriteLine(obj);
         }
     }
 }
