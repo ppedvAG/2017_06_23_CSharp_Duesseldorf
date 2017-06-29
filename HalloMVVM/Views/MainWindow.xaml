@@ -17,7 +17,11 @@
         <StackPanel.Background>
             <ImageBrush ImageSource="http://www.sadev.co.za/files/Clipboard01_4_0.png" Stretch="UniformToFill"/>
         </StackPanel.Background>
-        
+
+        <Rectangle Fill="Blue"
+                   Height="300"
+                   Width="{Binding RelativeSource={RelativeSource Self}, Path=Height}" />
+
         <TextBlock HorizontalAlignment="Center"
                    FontSize="30" 
                    FontFamily="Yu Gothic UI Semilight"
