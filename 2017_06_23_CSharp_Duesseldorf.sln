@@ -29,6 +29,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DelegatesInPraxis", "Delega
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OperatorenÜberladen", "OperatorenÜberladen\OperatorenÜberladen.csproj", "{91A5F4B7-1259-4395-AE1C-4EAE642769BE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HalloWPF", "HalloWPF\HalloWPF.csproj", "{95309E09-29E2-4E07-99CD-7BFF9FC3E184}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HalloMVVM", "HalloMVVM\HalloMVVM.csproj", "{287C2D6D-8A56-4A9C-BB8A-419BFD04C542}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -87,6 +91,14 @@ Global
 		{91A5F4B7-1259-4395-AE1C-4EAE642769BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{91A5F4B7-1259-4395-AE1C-4EAE642769BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{91A5F4B7-1259-4395-AE1C-4EAE642769BE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{95309E09-29E2-4E07-99CD-7BFF9FC3E184}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{95309E09-29E2-4E07-99CD-7BFF9FC3E184}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{95309E09-29E2-4E07-99CD-7BFF9FC3E184}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{95309E09-29E2-4E07-99CD-7BFF9FC3E184}.Release|Any CPU.Build.0 = Release|Any CPU
+		{287C2D6D-8A56-4A9C-BB8A-419BFD04C542}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{287C2D6D-8A56-4A9C-BB8A-419BFD04C542}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{287C2D6D-8A56-4A9C-BB8A-419BFD04C542}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{287C2D6D-8A56-4A9C-BB8A-419BFD04C542}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
