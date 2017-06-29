@@ -3,26 +3,36 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:vm="clr-namespace:HalloMVVM.ViewModels"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
-    <Window.DataContext>
+        Title="MainWindow" Height="350" Width="525"
+        DataContext="{Binding Source={StaticResource Locator}, Path=Main}">
+    <!--<Window.DataContext>
         <vm:MainWindowViewModel />
-    </Window.DataContext>
+    </Window.DataContext>-->
+    <Window.Resources>
+        <SolidColorBrush x:Key="myDefaultBackgroundColor" Color="Transparent" />
+    </Window.Resources>
     
     <StackPanel Margin="50">
+        <StackPanel.Background>
+            <ImageBrush ImageSource="http://www.sadev.co.za/files/Clipboard01_4_0.png" Stretch="UniformToFill"/>
+        </StackPanel.Background>
+        
         <TextBlock HorizontalAlignment="Center"
                    FontSize="30" 
                    FontFamily="Yu Gothic UI Semilight"
                    Foreground="Blue"
-                   Text="{Binding WelcomeText}"/>
+                   Text="{Binding WelcomeText}"
+                   Background="{StaticResource myDefaultBackgroundColor}"/>
 
         <TextBox Text="{Binding WelcomeText, UpdateSourceTrigger=PropertyChanged}" 
                  HorizontalContentAlignment="Center"
+                 Background="{StaticResource myDefaultBackgroundColor}"
                  Margin="0 20 0 0" />
 
         <Button Content="Change Text" 
                 Margin="0 20 0 0" 
-                Command="{Binding ChangeTextCommand}" />
+                Command="{Binding ChangeTextCommand}"
+                Background="{StaticResource myDefaultBackgroundColor}"/>
     </StackPanel>
 </Window>
